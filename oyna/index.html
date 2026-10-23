@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <!-- çocuk ekrana vurunca sayfa büyümesin, kaymasın -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>Pofu Kids - Oyna</title>
+    <meta name="description" content="Pofu Kids: 2-6 yaş için sesli, reklamsız oyunlar. Birkaç oyunu tarayıcıda ücretsiz deneyin." />
+    <meta name="theme-color" content="#FFF4E3" />
+    <!-- iPad/iPhone: Ana Ekrana Ekle ile tam ekran açılır -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Pofu Kids" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="icon-192.png" />
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #fff4e3;
+      }
+      body {
+        overflow: hidden;
+        overscroll-behavior: none;
+        /* dokunuşta seçim, büyüteç ve uzun basma menüsü çıkmasın */
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: none;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font: 600 28px system-ui, sans-serif;
+        color: #5a3e2b;
+        background: #fff4e3;
+        z-index: -1;
+      }
+    </style>
+  <link rel="icon" href="/oyna/favicon.ico"/></head>
+
+  <body>
+    <noscript>Pofu Kids için JavaScript gerekli. / Pofu Kids needs JavaScript.</noscript>
+    <div id="boot">Pofu Kids</div>
+    <div id="root"></div>
+    <script>
+      // iOS Safari: iki parmakla yakınlaştırma ve çift dokunuşla büyütme kapalı
+      document.addEventListener('gesturestart', function (e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    </script>
+  <script src="/oyna/_expo/static/js/web/entry-8e4e68d20dce435d5b49524852e96b98.js" defer></script>
+</body>
+</html>

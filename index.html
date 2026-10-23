@@ -3,21 +3,257 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pofu Kids</title>
+<title>Pofu Kids - 2-6 yaş için sesli, reklamsız oyunlar</title>
+<meta name="description" content="Pofu Kids: okul öncesi çocuklar için 30'dan fazla sesli, reklamsız ve internetsiz oyun. Türkçe ve İngilizce. Birkaç oyunu tarayıcıda ücretsiz deneyin.">
+<meta property="og:title" content="Pofu Kids">
+<meta property="og:description" content="2-6 yaş için sesli, reklamsız oyunlar. Voice-guided, ad-free games for ages 2-6.">
+<meta property="og:image" content="https://pofukids.com/img/shot_village.webp">
+<meta name="theme-color" content="#FFF4E3">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <style>
-body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:40px 16px;color:#3a2a20;background:#fff8ef;line-height:1.6;text-align:center}
-h1{font-size:40px;margin:0 0 8px}
-p{font-size:18px}
-a{color:#d0623f}
-.box{background:#fff;border:3px solid #3a2a20;border-radius:24px;padding:24px;margin:24px 0}
+@font-face{font-family:Fredoka;font-weight:400;font-display:swap;src:url(fonts/fredoka-400.woff2) format("woff2")}
+@font-face{font-family:Fredoka;font-weight:500 600;font-display:swap;src:url(fonts/fredoka-600.woff2) format("woff2")}
+@font-face{font-family:Fredoka;font-weight:700;font-display:swap;src:url(fonts/fredoka-700.woff2) format("woff2")}
+:root{
+  --cream:#FFF4E3; --cream2:#FFE9CF; --peach:#FFC79B; --coral:#FF8A65; --mustard:#FFC940;
+  --teal:#7FC8A9; --cocoa:#5A3E2B; --cocoa2:#7A5A44; --white:#fff;
+  --line:3px solid var(--cocoa); --r:28px; --shadow:0 6px 0 var(--cocoa);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--cocoa);font-family:'Fredoka',system-ui,sans-serif;font-size:18px;line-height:1.5;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+[data-l]{display:none}
+html[lang=tr] [data-l=tr], html[lang=en] [data-l=en]{display:revert}
+
+header{position:sticky;top:0;z-index:10;background:rgba(255,244,227,.92);backdrop-filter:blur(8px);border-bottom:2px solid rgba(90,62,43,.12)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:24px;text-decoration:none}
+.logo img{width:42px;height:42px;border-radius:12px;border:2px solid var(--cocoa)}
+.langs{display:flex;gap:6px}
+.langs button{font:600 15px 'Fredoka',sans-serif;color:var(--cocoa);background:var(--white);border:2px solid var(--cocoa);border-radius:99px;padding:6px 14px;cursor:pointer}
+.langs button.on{background:var(--cocoa);color:var(--cream)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 22px 'Fredoka',sans-serif;text-decoration:none;color:var(--cocoa);background:var(--mustard);border:var(--line);border-radius:99px;padding:14px 30px;box-shadow:var(--shadow);transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--cocoa)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cocoa)}
+.btn .tri{width:0;height:0;border-left:16px solid var(--cocoa);border-top:10px solid transparent;border-bottom:10px solid transparent}
+.soon{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;border:2px dashed var(--cocoa2);border-radius:99px;padding:10px 18px;color:var(--cocoa2)}
+
+.hero{position:relative;padding:56px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(ellipse at center,#d8f0c6 0%,rgba(216,240,198,0) 70%);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.kicker{display:inline-block;background:var(--teal);border:2px solid var(--cocoa);border-radius:99px;padding:4px 14px;font-weight:600;font-size:15px}
+h1{font-size:56px;line-height:1.05;margin:18px 0 16px;letter-spacing:-.5px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--peach) 62%)}
+.lead{font-size:20px;color:var(--cocoa2);margin:0 0 28px;max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.tablet{position:relative;border:var(--line);border-radius:34px;background:var(--cocoa);padding:12px;box-shadow:0 14px 0 rgba(90,62,43,.18);transform:rotate(1.5deg)}
+.tablet img{border-radius:22px;aspect-ratio:1194/834;object-fit:cover;width:100%;height:auto}
+.peek{position:absolute;width:24%;bottom:-8%;left:-10%;transform:rotate(-6deg);filter:drop-shadow(0 6px 0 rgba(90,62,43,.15))}
+.peek2{left:auto;right:-8%;width:22%;transform:rotate(6deg)}
+
+section{padding:56px 0}
+h2{font-size:40px;line-height:1.1;margin:0 0 10px;text-align:center}
+.sub{text-align:center;color:var(--cocoa2);margin:0 auto 34px;max-width:640px}
+
+.chars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.char{background:var(--white);border:var(--line);border-radius:var(--r);padding:18px 14px 20px;text-align:center;box-shadow:var(--shadow)}
+.char img{height:170px;width:auto;margin:0 auto 8px}
+.char b{font-size:24px;display:block}
+.char span{font-size:16px;color:var(--cocoa2)}
+.char:nth-child(1){background:#FFE1D6}.char:nth-child(2){background:#DDEFFF}.char:nth-child(3){background:#E3F6E8}.char:nth-child(4){background:#E9E3FB}
+
+.games{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.game{position:relative;display:block;text-decoration:none;background:var(--white);border:var(--line);border-radius:24px;padding:10px 8px 12px;text-align:center;box-shadow:var(--shadow);transition:transform .12s}
+.game:hover{transform:translateY(-3px) rotate(-1deg)}
+.game img{width:100%;aspect-ratio:1}
+.game b{display:block;font-size:17px;margin-top:2px}
+.game .tag{position:absolute;top:-10px;right:-8px;background:var(--coral);color:var(--white);border:2px solid var(--cocoa);border-radius:99px;font-size:13px;font-weight:700;padding:2px 10px}
+.more{margin-top:34px;background:var(--cream2);border:2px dashed var(--cocoa2);border-radius:var(--r);padding:22px}
+.more p{margin:0 0 14px;text-align:center;font-weight:600}
+.mini{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.mini div{text-align:center;font-size:14px;color:var(--cocoa2)}
+.mini img{width:100%;aspect-ratio:1;opacity:.92}
+.center{text-align:center;margin-top:30px}
+
+.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 22px;margin:0 -20px}
+.shots img{flex:0 0 auto;width:min(78vw,460px);aspect-ratio:1194/834;object-fit:cover;border:var(--line);border-radius:22px;scroll-snap-align:center;box-shadow:var(--shadow);background:var(--white)}
+
+.parents{background:var(--white);border-top:var(--line);border-bottom:var(--line)}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.f{border:var(--line);border-radius:var(--r);padding:22px;background:var(--cream)}
+.f .ic{width:54px;height:54px;border-radius:16px;border:2px solid var(--cocoa);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.f h3{margin:0 0 6px;font-size:22px}
+.f p{margin:0;color:var(--cocoa2);font-size:17px}
+
+footer{padding:40px 0 50px;text-align:center;color:var(--cocoa2);font-size:16px}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:center;margin-bottom:14px}
+footer a{font-weight:600;color:var(--cocoa)}
+
+@media (max-width:900px){
+  h1{font-size:42px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .games{grid-template-columns:repeat(3,1fr)}
+  .mini{grid-template-columns:repeat(4,1fr)}
+  .chars{grid-template-columns:repeat(2,1fr)}
+  .feat{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  h1{font-size:36px}
+  h2{font-size:31px}
+  .btn{font-size:20px;padding:12px 24px}
+  .feat{grid-template-columns:1fr}
+  .char img{height:130px}
+  .shots{margin:0 -16px;padding:6px 16px 22px}
+  .peek{display:none}
+}
 </style>
 </head>
 <body>
-<h1>Pofu Kids</h1>
-<p>2-6 yaş çocuklar için sesli, reklamsız ve internetsiz oyunlar.<br>Voice-guided, ad-free, offline games for children aged 2 to 6.</p>
-<div class="box">
-<p><a href="privacy.html">Gizlilik Politikası / Privacy Policy</a></p>
-<p>Destek / Support: <a href="mailto:support@pofukids.com">support@pofukids.com</a><br>Genel / General: <a href="mailto:info@pofukids.com">info@pofukids.com</a></p>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./"><img src="img/icon-192.png" alt="">Pofu Kids</a>
+    <div class="langs"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker"><span data-l="tr">2-6 yaş</span><span data-l="en">Ages 2-6</span></span>
+      <h1>
+        <span data-l="tr">Okul öncesine <em>sesli</em>, reklamsız oyunlar</span>
+        <span data-l="en"><em>Voice-guided</em>, ad-free games for little ones</span>
+      </h1>
+      <p class="lead">
+        <span data-l="tr">30'dan fazla oyun, sevimli dört rehber ve bol bol kutlama. Okuma bilmeyen çocuk için her şey sesli anlatılır. Türkçe ve İngilizce, internetsiz çalışır.</span>
+        <span data-l="en">More than 30 games, four friendly guides and lots of celebrating. Everything is spoken aloud, so children who can't read yet can play on their own. Turkish and English, works offline.</span>
+      </p>
+      <div class="cta">
+        <a class="btn" href="oyna/"><span class="tri"></span><span data-l="tr">Hemen dene</span><span data-l="en">Try it now</span></a>
+        <span class="soon"><span data-l="tr">Uygulama yakında App Store'da</span><span data-l="en">App coming soon to the App Store</span></span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="tablet"><img src="img/shot_village.webp" alt="Pofu Kids" width="960" height="671"></div>
+      <img class="peek" src="img/char_zuzu.webp" alt="">
+      <img class="peek peek2" src="img/char_pofu.webp" alt="">
+    </div>
+  </div>
 </div>
+
+<section>
+  <div class="wrap">
+    <h2><span data-l="tr">Rehber arkadaşlar</span><span data-l="en">Meet the guides</span></h2>
+    <p class="sub"><span data-l="tr">Çocuk birini seçer; seçtiği arkadaş bütün oyunlarda kendi sesiyle yol gösterir, adıyla seslenir.</span><span data-l="en">Your child picks a friend, who then guides every game in their own voice and even says your child's name.</span></p>
+    <div class="chars">
+      <div class="char"><img src="img/char_lina.webp" alt="Lina"><b>Lina</b><span data-l="tr">Neşeli ve meraklı</span><span data-l="en">Cheerful and curious</span></div>
+      <div class="char"><img src="img/char_teo.webp" alt="Teo"><b>Teo</b><span data-l="tr">Enerjik ve şakacı</span><span data-l="en">Energetic and playful</span></div>
+      <div class="char"><img src="img/char_pofu.webp" alt="Pofu"><b>Pofu</b><span data-l="tr">Minik tembel hayvan</span><span data-l="en">A baby sloth</span></div>
+      <div class="char"><img src="img/char_zuzu.webp" alt="Zuzu"><b>Zuzu</b><span data-l="tr">Minik dinozor</span><span data-l="en">A baby dinosaur</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2><span data-l="tr">Tarayıcıda deneyin</span><span data-l="en">Try them in your browser</span></h2>
+    <p class="sub"><span data-l="tr">Bu altı oyunun deneme sürümü sitede ücretsiz. En iyi tablette, yatay ekranda ve sesi açık oynanır.</span><span data-l="en">Free demo versions of these six games right here. Best on a tablet, held sideways, with the sound on.</span></p>
+    <div class="games">
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_coloring.webp" alt=""><b><span data-l="tr">Boyama</span><span data-l="en">Coloring</span></b></a>
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_balloons.webp" alt=""><b><span data-l="tr">Balonlar</span><span data-l="en">Balloons</span></b></a>
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_bubbles.webp" alt=""><b><span data-l="tr">Baloncuklar</span><span data-l="en">Bubbles</span></b></a>
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_memory.webp" alt=""><b><span data-l="tr">Kartlar</span><span data-l="en">Cards</span></b></a>
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_puzzle.webp" alt=""><b><span data-l="tr">Yapboz</span><span data-l="en">Puzzle</span></b></a>
+      <a class="game" href="oyna/"><span class="tag"><span data-l="tr">Oyna</span><span data-l="en">Play</span></span><img src="img/b_piano.webp" alt=""><b><span data-l="tr">Piyano</span><span data-l="en">Piano</span></b></a>
+    </div>
+    <div class="more">
+      <p><span data-l="tr">Uygulamada bunlar ve daha fazlası var</span><span data-l="en">The app has all of these and more</span></p>
+      <div class="mini">
+        <div><img src="img/b_truck.webp" alt=""><span data-l="tr">Araba Sürme</span><span data-l="en">Driving</span></div>
+        <div><img src="img/b_kitchen.webp" alt=""><span data-l="tr">Mutfak</span><span data-l="en">Kitchen</span></div>
+        <div><img src="img/b_express.webp" alt=""><span data-l="tr">Şekil Ekspresi</span><span data-l="en">Shape Express</span></div>
+        <div><img src="img/b_cashier.webp" alt=""><span data-l="tr">Market Kasası</span><span data-l="en">Checkout</span></div>
+        <div><img src="img/b_carwash.webp" alt=""><span data-l="tr">Oto Yıkama</span><span data-l="en">Car Wash</span></div>
+        <div><img src="img/b_bike.webp" alt=""><span data-l="tr">Bisiklet Parkı</span><span data-l="en">Bike Park</span></div>
+        <div><img src="img/b_garden.webp" alt=""><span data-l="tr">Bahçıvan</span><span data-l="en">Gardener</span></div>
+        <div><img src="img/b_repair.webp" alt=""><span data-l="tr">Tamirci</span><span data-l="en">Car Repair</span></div>
+        <div><img src="img/b_soccer.webp" alt=""><span data-l="tr">Futbol</span><span data-l="en">Football</span></div>
+        <div><img src="img/b_school.webp" alt=""><span data-l="tr">Harfler</span><span data-l="en">Letters</span></div>
+        <div><img src="img/b_numbers.webp" alt=""><span data-l="tr">Sayılar</span><span data-l="en">Numbers</span></div>
+        <div><img src="img/b_emotions.webp" alt=""><span data-l="tr">Duygularımız</span><span data-l="en">Feelings</span></div>
+        <div><img src="img/b_bedtime.webp" alt=""><span data-l="tr">Uyku Vakti</span><span data-l="en">Bedtime</span></div>
+        <div><img src="img/b_talk.webp" alt=""><span data-l="tr">Konuşalım</span><span data-l="en">Let's Talk</span></div>
+      </div>
+    </div>
+    <div class="center"><a class="btn" href="oyna/"><span class="tri"></span><span data-l="tr">Oyunları aç</span><span data-l="en">Open the games</span></a></div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <h2><span data-l="tr">Uygulamadan kareler</span><span data-l="en">Inside the app</span></h2>
+    <p class="sub"><span data-l="tr">Kaydırarak bakın.</span><span data-l="en">Swipe to see more.</span></p>
+    <div class="shots">
+      <img src="img/shot_drive.webp" alt="">
+      <img src="img/shot_express.webp" alt="">
+      <img src="img/shot_cashier.webp" alt="">
+      <img src="img/shot_kitchen.webp" alt="">
+      <img src="img/shot_carwash.webp" alt="">
+      <img src="img/shot_piano.webp" alt="">
+      <img src="img/shot_balloons.webp" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="parents">
+  <div class="wrap">
+    <h2><span data-l="tr">Veliler için</span><span data-l="en">For parents</span></h2>
+    <p class="sub"><span data-l="tr">Gönül rahatlığıyla verebileceğiniz bir uygulama olsun diye yaptık.</span><span data-l="en">Built to be an app you can hand over with peace of mind.</span></p>
+    <div class="feat">
+      <div class="f"><div class="ic" style="background:#FFE1D6"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></div><h3><span data-l="tr">Reklam yok</span><span data-l="en">No ads</span></h3><p><span data-l="tr">Ne uygulamada ne bu sitede reklam var. Çocuğun önüne beklenmedik hiçbir şey çıkmaz.</span><span data-l="en">No ads in the app or on this site. Nothing unexpected pops up in front of your child.</span></p></div>
+      <div class="f"><div class="ic" style="background:#DDEFFF"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3><span data-l="tr">Veri toplamaz</span><span data-l="en">No data collected</span></h3><p><span data-l="tr">Hesap, takip ya da analiz yok. Çocuğun adı ve ilerlemesi yalnızca cihazda kalır.</span><span data-l="en">No accounts, tracking or analytics. Your child's name and progress stay on the device.</span></p></div>
+      <div class="f"><div class="ic" style="background:#E3F6E8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg></div><h3><span data-l="tr">İnternetsiz</span><span data-l="en">Works offline</span></h3><p><span data-l="tr">Uygulama bir kez indikten sonra yolda, uçakta, her yerde internet olmadan çalışır.</span><span data-l="en">Once installed, the app works anywhere without the internet: in the car, on a plane, anywhere.</span></p></div>
+      <div class="f"><div class="ic" style="background:#FFF2CC"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg></div><h3><span data-l="tr">Her şey sesli</span><span data-l="en">Everything spoken</span></h3><p><span data-l="tr">Yönergeler Türkçe ya da İngilizce seslendirilir. Okuma bilmeyen çocuk tek başına oynar.</span><span data-l="en">Instructions are spoken in Turkish or English, so pre-readers can play on their own.</span></p></div>
+      <div class="f"><div class="ic" style="background:#E9E3FB"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3><span data-l="tr">Yaşa göre zorluk</span><span data-l="en">Grows with your child</span></h3><p><span data-l="tr">Oyunlar çocuğun yaşına göre başlar; isterse kendisi zorlaştırır.</span><span data-l="en">Games start at your child's age level and can be made harder whenever they like.</span></p></div>
+      <div class="f"><div class="ic" style="background:#FBE3E3"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5A3E2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3><span data-l="tr">Ebeveyn köşesi</span><span data-l="en">Parents corner</span></h3><p><span data-l="tr">Ayarlar küçük bir kilidin arkasında. Mikrofon izni gibi kararları siz verirsiniz.</span><span data-l="en">Settings sit behind a small parental gate. Choices like microphone access are yours.</span></p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy.html"><span data-l="tr">Gizlilik Politikası</span><span data-l="en">Privacy Policy</span></a>
+      <a href="mailto:support@pofukids.com">support@pofukids.com</a>
+      <a href="mailto:info@pofukids.com">info@pofukids.com</a>
+    </nav>
+    <div><span data-l="tr">Bu sitede çerez, reklam ve takip yoktur.</span><span data-l="en">This site uses no cookies, ads or tracking.</span></div>
+    <div style="margin-top:6px">© 2026 Pofu Kids</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=location.hash.slice(1);
+  var l=(h==='tr'||h==='en')?h:((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en');
+  function set(x){
+    document.documentElement.lang=x;
+    document.querySelectorAll('.langs button').forEach(function(b){b.className=b.getAttribute('data-set')===x?'on':''});
+    document.title=x==='tr'?'Pofu Kids - 2-6 yaş için sesli, reklamsız oyunlar':'Pofu Kids - Voice-guided, ad-free games for ages 2-6';
+    var p=document.querySelector('footer a[href^="privacy"]'); if(p) p.setAttribute('href','privacy.html#'+x);
+  }
+  set(l);
+  document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){var x=b.getAttribute('data-set');history.replaceState(null,'','#'+x);set(x)})});
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pofu Kids</title>
+<script>
+  // oyunların içindeki bir adres doğrudan açılırsa (yenileme, paylaşılan link) oyunların başına git
+  if (location.pathname.indexOf('/oyna') === 0) location.replace('/oyna/');
+</script>
+<style>
+@font-face{font-family:Fredoka;font-weight:600;src:url(/fonts/fredoka-600.woff2) format("woff2")}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#FFF4E3;color:#5A3E2B;font-family:Fredoka,system-ui,sans-serif;text-align:center;padding:16px}
+img{width:180px}
+a{font-weight:600;font-size:20px;color:#5A3E2B;background:#FFC940;border:3px solid #5A3E2B;border-radius:99px;padding:10px 26px;text-decoration:none;box-shadow:0 5px 0 #5A3E2B}
+</style>
+</head>
+<body>
+<img src="/img/char_pofu.webp" alt="">
+<div style="font-size:24px">Bu sayfa bulunamadı / Page not found</div>
+<a href="/">Pofu Kids</a>
+</body>
+</html>
